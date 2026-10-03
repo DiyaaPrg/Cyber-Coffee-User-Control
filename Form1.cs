@@ -48,5 +48,11 @@ namespace CyberCoffe_User_Control
         {
             _SetUserControlNum();
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            FrmSettings frm = new FrmSettings();
+            frm.ShowDialog();
+        }
     }
 }

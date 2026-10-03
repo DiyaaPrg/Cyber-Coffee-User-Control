@@ -31,7 +31,7 @@ namespace CyberCoffee_DataAccess
             decimal? value=null;
             try
             {
-                value = Convert.ToDecimal(Registry.GetValue(UnifiedRateKeyPath, ValueName, true));
+                value = Convert.ToDecimal(Registry.GetValue(UnifiedRateKeyPath, ValueName, null));
             }
             catch(Exception ex)
             {
@@ -50,7 +50,7 @@ namespace CyberCoffee_DataAccess
             {
                 try
                 {
-                    object obj = Registry.GetValue(DevicesRatesKeyPath, count.ToString(), true);
+                    object obj = Registry.GetValue(DevicesRatesKeyPath, count.ToString(), null);
 
                     if (obj != null)
                     {

@@ -15,7 +15,7 @@ namespace CyberCoffee_Business
         public static PricingMode? pricingMode = null;
 
         public static decimal? UnifiedRate = null;
-        public static Dictionary<byte, decimal> PerDeviceRates = null;
+        public static Dictionary<byte, decimal> PerDeviceRates = new Dictionary<byte, decimal>();
 
         private const string _FolderKeyPath = @"HKEY_CURRENT_USER\Software\CyberCoffee";
         private const string _UnifiedRateKeyPath = @"HKEY_CURRENT_USER\Software\CyberCoffee\UnifiedRate";

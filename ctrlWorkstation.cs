@@ -112,11 +112,7 @@ namespace CyberCoffe_User_Control
 
         private void _SetEventsToStart()
         {
-            if (_Workstation.SessionType == enSessionType.free)
-            {
-                timer1.Tick += countUp_timer;
-            }
-            else 
+            if (_Workstation.SessionType != enSessionType.free) 
                 timer1.Tick += countDown_timer;
 
         }
@@ -217,7 +213,11 @@ namespace CyberCoffe_User_Control
                 btnStart.Text = "Pause";
 
                 btnStop.Enabled = true;
+                
+
+
                 timer1.Start();
+
             }
         }
 
@@ -248,9 +248,10 @@ namespace CyberCoffe_User_Control
 
             frm.ShowDialog();
 
-            
+
 
             // Reset: 
+            _Workstation = null;
             _Workstation = new WorkstationEventArgs();
             btnSettings.Enabled = true;
             btnStop.Enabled = false;
@@ -268,9 +269,17 @@ namespace CyberCoffe_User_Control
 
         }
 
+        private void _SetDefault()
+        {
+            _Workstation.SessionType = enSessionType.free;
+            if (_Workstation.SessionType == enSessionType.free)
+                timer1.Tick += countUp_timer;
+
+        }
+
         private void ctrlWorkstation_Load(object sender, EventArgs e)
         {
-            _Workstation.PricePerHour = -1; // مؤقتا
+            _SetDefault();
         }
     }
 }

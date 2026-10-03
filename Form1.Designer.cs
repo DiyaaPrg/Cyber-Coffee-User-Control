@@ -29,15 +29,57 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.btnSettings = new Guna.UI2.WinForms.Guna2Button();
+            this.ctrlWorkstation8 = new CyberCoffe_User_Control.ctrlWorkstation();
+            this.ctrlWorkstation7 = new CyberCoffe_User_Control.ctrlWorkstation();
             this.ctrlWorkstation4 = new CyberCoffe_User_Control.ctrlWorkstation();
             this.ctrlWorkstation5 = new CyberCoffe_User_Control.ctrlWorkstation();
             this.ctrlWorkstation6 = new CyberCoffe_User_Control.ctrlWorkstation();
             this.ctrlWorkstation3 = new CyberCoffe_User_Control.ctrlWorkstation();
             this.ctrlWorkstation2 = new CyberCoffe_User_Control.ctrlWorkstation();
             this.ctrlWorkstation1 = new CyberCoffe_User_Control.ctrlWorkstation();
-            this.ctrlWorkstation7 = new CyberCoffe_User_Control.ctrlWorkstation();
-            this.ctrlWorkstation8 = new CyberCoffe_User_Control.ctrlWorkstation();
             this.SuspendLayout();
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(22)))), ((int)(((byte)(38)))));
+            this.btnSettings.BorderRadius = 20;
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSettings.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Image = global::CyberCoffe_User_Control.Properties.Resources.settings__64_;
+            this.btnSettings.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnSettings.Location = new System.Drawing.Point(12, 929);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(69, 58);
+            this.btnSettings.TabIndex = 10;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // ctrlWorkstation8
+            // 
+            this.ctrlWorkstation8.BackColor = System.Drawing.Color.White;
+            this.ctrlWorkstation8.Location = new System.Drawing.Point(1448, 452);
+            this.ctrlWorkstation8.Name = "ctrlWorkstation8";
+            this.ctrlWorkstation8.Size = new System.Drawing.Size(472, 430);
+            this.ctrlWorkstation8.TabIndex = 7;
+            this.ctrlWorkstation8.Tag = "8";
+            this.ctrlWorkstation8.WorkstationNum = ((byte)(0));
+            // 
+            // ctrlWorkstation7
+            // 
+            this.ctrlWorkstation7.BackColor = System.Drawing.Color.White;
+            this.ctrlWorkstation7.Location = new System.Drawing.Point(1448, 2);
+            this.ctrlWorkstation7.Name = "ctrlWorkstation7";
+            this.ctrlWorkstation7.Size = new System.Drawing.Size(472, 430);
+            this.ctrlWorkstation7.TabIndex = 6;
+            this.ctrlWorkstation7.Tag = "4";
+            this.ctrlWorkstation7.WorkstationNum = ((byte)(0));
             // 
             // ctrlWorkstation4
             // 
@@ -99,31 +141,12 @@
             this.ctrlWorkstation1.Tag = "1";
             this.ctrlWorkstation1.WorkstationNum = ((byte)(0));
             // 
-            // ctrlWorkstation7
-            // 
-            this.ctrlWorkstation7.BackColor = System.Drawing.Color.White;
-            this.ctrlWorkstation7.Location = new System.Drawing.Point(1448, 2);
-            this.ctrlWorkstation7.Name = "ctrlWorkstation7";
-            this.ctrlWorkstation7.Size = new System.Drawing.Size(472, 430);
-            this.ctrlWorkstation7.TabIndex = 6;
-            this.ctrlWorkstation7.Tag = "4";
-            this.ctrlWorkstation7.WorkstationNum = ((byte)(0));
-            // 
-            // ctrlWorkstation8
-            // 
-            this.ctrlWorkstation8.BackColor = System.Drawing.Color.White;
-            this.ctrlWorkstation8.Location = new System.Drawing.Point(1448, 452);
-            this.ctrlWorkstation8.Name = "ctrlWorkstation8";
-            this.ctrlWorkstation8.Size = new System.Drawing.Size(472, 430);
-            this.ctrlWorkstation8.TabIndex = 7;
-            this.ctrlWorkstation8.Tag = "8";
-            this.ctrlWorkstation8.WorkstationNum = ((byte)(0));
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.ctrlWorkstation8);
             this.Controls.Add(this.ctrlWorkstation7);
             this.Controls.Add(this.ctrlWorkstation4);
@@ -150,6 +173,7 @@
         private ctrlWorkstation ctrlWorkstation6 ;
         private ctrlWorkstation ctrlWorkstation7 ;
         private ctrlWorkstation ctrlWorkstation8 ;
+        private Guna.UI2.WinForms.Guna2Button btnSettings;
     }
 }
 

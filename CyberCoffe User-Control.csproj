@@ -66,6 +66,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +92,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\UcPricing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Settings\UcPricing.Designer.cs">
+      <DependentUpon>UcPricing.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ctrlWorkstation.resx">
       <DependentUpon>ctrlWorkstation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConfig.resx">
       <DependentUpon>FrmConfig.cs</DependentUpon>
@@ -111,6 +126,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Settings\UcPricing.resx">
+      <DependentUpon>UcPricing.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -174,10 +192,16 @@
     <None Include="Resources\type.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CyberCoffee-Business\CyberCoffee-Business.csproj">
+    <ProjectReference Include="CyberCoffee-Business\CyberCoffee-Business.csproj">
       <Project>{c125ec0b-aa9a-4632-9e41-4326e686fbdf}</Project>
       <Name>CyberCoffee-Business</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pricing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
