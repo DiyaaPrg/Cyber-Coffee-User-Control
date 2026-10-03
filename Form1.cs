@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CyberCoffee_Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace CyberCoffe_User_Control
         public Form1()
         {
             InitializeComponent();
+
+            if (clsWorkstationPricing.Find())
+            {
+                ctrlWorkstation1.SetPricePerHour();
+                ctrlWorkstation2.SetPricePerHour();
+                ctrlWorkstation3.SetPricePerHour();
+                ctrlWorkstation4.SetPricePerHour();
+                ctrlWorkstation5.SetPricePerHour();
+                ctrlWorkstation6.SetPricePerHour();
+                ctrlWorkstation7.SetPricePerHour();
+                ctrlWorkstation8.SetPricePerHour();
+            }
         }
 
         private void _SetUserControlNum()

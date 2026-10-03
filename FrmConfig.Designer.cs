@@ -457,7 +457,8 @@
             this.tbPricePerHour.Margin = new System.Windows.Forms.Padding(5);
             this.tbPricePerHour.MaxLength = 5;
             this.tbPricePerHour.Name = "tbPricePerHour";
-            this.tbPricePerHour.PlaceholderText = "0";
+            this.tbPricePerHour.PlaceholderText = "";
+            this.tbPricePerHour.ReadOnly = true;
             this.tbPricePerHour.SelectedText = "";
             this.tbPricePerHour.Size = new System.Drawing.Size(361, 47);
             this.tbPricePerHour.TabIndex = 6;

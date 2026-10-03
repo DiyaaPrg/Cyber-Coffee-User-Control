@@ -64,7 +64,6 @@
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(477, 50);
             this.pnlHeader.TabIndex = 0;
-            this.pnlHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeader_Paint);
             // 
             // label3
             // 
@@ -286,6 +285,7 @@
             this.Controls.Add(this.pnlHeader);
             this.Name = "ctrlWorkstation";
             this.Size = new System.Drawing.Size(477, 400);
+            this.Load += new System.EventHandler(this.ctrlWorkstation_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

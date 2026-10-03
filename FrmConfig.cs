@@ -18,6 +18,14 @@ namespace CyberCoffe_User_Control
             InitializeComponent();
         }
 
+        public FrmConfig(decimal PricePerHour)
+        {
+            InitializeComponent();
+            this.PricePerhour = PricePerHour;
+        }
+
+        private decimal PricePerhour=0;
+
         ctrlWorkstation.WorkstationEventArgs workstationSettings = new ctrlWorkstation.WorkstationEventArgs();
 
         public event EventHandler<ctrlWorkstation.WorkstationEventArgs> OnSettingsSaved;
@@ -28,12 +36,15 @@ namespace CyberCoffe_User_Control
 
             this.MaximizeBox = false;
 
-            tbPricePerHour.Focus();
 
             tbHour.TextChanged += ValidateTimeForPriceCalculation;
             tbMinutes.TextChanged += ValidateTimeForPriceCalculation;
             tbSeconds.TextChanged += ValidateTimeForPriceCalculation;
 
+            if (PricePerhour != -1) // -1 means not found, so set it empty!
+                tbPricePerHour.Text = PricePerhour.ToString("F2");
+            else
+                tbPricePerHour.Text = string.Empty;
         }
 
         private void tbPricePerHour_KeyPress(object sender, KeyPressEventArgs e)

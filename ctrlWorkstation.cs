@@ -1,4 +1,5 @@
 ﻿using CyberCoffe_User_Control.Properties;
+using CyberCoffee_Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,6 +81,20 @@ namespace CyberCoffe_User_Control
             InitializeComponent();
         }
 
+        public void SetPricePerHour()
+        {
+            if (clsWorkstationPricing.pricingMode is clsWorkstationPricing.PricingMode.Unified)
+                _Workstation.PricePerHour = Convert.ToDecimal(clsWorkstationPricing.UnifiedRate);
+            else if (clsWorkstationPricing.pricingMode is clsWorkstationPricing.PricingMode.PerDevice)
+            {
+                byte ctrlKey = Convert.ToByte(this.Tag);
+                _Workstation.PricePerHour = clsWorkstationPricing.PerDeviceRates[ctrlKey];
+            }
+            else
+                _Workstation.PricePerHour = -1; //not found
+
+        }
+
         private void _SetTimeDataToStart()
         {
             if (_Workstation.SessionType == enSessionType.free)
@@ -119,7 +134,7 @@ namespace CyberCoffe_User_Control
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            FrmConfig frm = new FrmConfig();
+            FrmConfig frm = new FrmConfig(_Workstation.PricePerHour);
             frm.OnSettingsSaved += _SetSettings;
             frm.ShowDialog();
 
@@ -190,7 +205,7 @@ namespace CyberCoffe_User_Control
             }
             else
             {
-                if (_Workstation.PricePerHour == 0)
+                if (_Workstation.PricePerHour < 0)
                 {
                     MessageBox.Show("Enter session settings first!", "Start Session", MessageBoxButtons.OK, MessageBoxIcon.Error); 
                     return;
@@ -253,10 +268,9 @@ namespace CyberCoffe_User_Control
 
         }
 
-        private void pnlHeader_Paint(object sender, PaintEventArgs e)
+        private void ctrlWorkstation_Load(object sender, EventArgs e)
         {
-
+            _Workstation.PricePerHour = -1; // مؤقتا
         }
-
     }
 }
