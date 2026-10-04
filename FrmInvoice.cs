@@ -22,16 +22,6 @@ namespace CyberCoffe_User_Control
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public void LoadData(object sender, ctrlWorkstation.WorkstationEventArgs e)
         {
 

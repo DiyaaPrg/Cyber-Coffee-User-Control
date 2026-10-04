@@ -250,7 +250,6 @@
             this.label12.Size = new System.Drawing.Size(145, 30);
             this.label12.TabIndex = 9;
             this.label12.Text = "Total Amount";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // guna2PictureBox8
             // 
@@ -522,7 +521,6 @@
             this.label5.Size = new System.Drawing.Size(159, 24);
             this.label5.TabIndex = 9;
             this.label5.Text = "Computer No.";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // guna2PictureBox2
             // 

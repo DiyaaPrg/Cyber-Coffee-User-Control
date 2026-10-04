@@ -126,6 +126,8 @@ namespace CyberCoffe_User_Control
         {
             _Workstation = workstationsettings;
 
+            _Workstation.PricePerHour = _PricePerHour;
+
             _SetEventsToStart();
             _SetTimeDataToStart();
 

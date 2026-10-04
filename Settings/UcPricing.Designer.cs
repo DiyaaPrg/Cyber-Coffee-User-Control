@@ -152,6 +152,11 @@
             this.NupDoUnifiedRate.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NupDoUnifiedRate.ForeColor = System.Drawing.Color.White;
             this.NupDoUnifiedRate.Location = new System.Drawing.Point(281, 84);
+            this.NupDoUnifiedRate.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.NupDoUnifiedRate.Name = "NupDoUnifiedRate";
             this.NupDoUnifiedRate.Size = new System.Drawing.Size(169, 36);
             this.NupDoUnifiedRate.TabIndex = 13;
@@ -300,6 +305,11 @@
             this.guna2NumericUpDown5.Font = new System.Drawing.Font("Comfortaa", 9.999998F, System.Drawing.FontStyle.Bold);
             this.guna2NumericUpDown5.ForeColor = System.Drawing.Color.White;
             this.guna2NumericUpDown5.Location = new System.Drawing.Point(251, 3);
+            this.guna2NumericUpDown5.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.guna2NumericUpDown5.Name = "guna2NumericUpDown5";
             this.guna2NumericUpDown5.Size = new System.Drawing.Size(169, 31);
             this.guna2NumericUpDown5.TabIndex = 14;
@@ -353,6 +363,11 @@
             this.guna2NumericUpDown6.Font = new System.Drawing.Font("Comfortaa", 9.999998F, System.Drawing.FontStyle.Bold);
             this.guna2NumericUpDown6.ForeColor = System.Drawing.Color.White;
             this.guna2NumericUpDown6.Location = new System.Drawing.Point(251, 3);
+            this.guna2NumericUpDown6.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.guna2NumericUpDown6.Name = "guna2NumericUpDown6";
             this.guna2NumericUpDown6.Size = new System.Drawing.Size(169, 31);
             this.guna2NumericUpDown6.TabIndex = 14;
@@ -406,6 +421,11 @@
             this.guna2NumericUpDown7.Font = new System.Drawing.Font("Comfortaa", 9.999998F, System.Drawing.FontStyle.Bold);
             this.guna2NumericUpDown7.ForeColor = System.Drawing.Color.White;
             this.guna2NumericUpDown7.Location = new System.Drawing.Point(251, 3);
+            this.guna2NumericUpDown7.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.guna2NumericUpDown7.Name = "guna2NumericUpDown7";
             this.guna2NumericUpDown7.Size = new System.Drawing.Size(169, 31);
             this.guna2NumericUpDown7.TabIndex = 14;
@@ -459,6 +479,11 @@
             this.guna2NumericUpDown8.Font = new System.Drawing.Font("Comfortaa", 9.999998F, System.Drawing.FontStyle.Bold);
             this.guna2NumericUpDown8.ForeColor = System.Drawing.Color.White;
             this.guna2NumericUpDown8.Location = new System.Drawing.Point(251, 3);
+            this.guna2NumericUpDown8.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.guna2NumericUpDown8.Name = "guna2NumericUpDown8";
             this.guna2NumericUpDown8.Size = new System.Drawing.Size(169, 31);
             this.guna2NumericUpDown8.TabIndex = 14;
@@ -512,6 +537,11 @@
             this.guna2NumericUpDown4.Font = new System.Drawing.Font("Comfortaa", 9.999998F, System.Drawing.FontStyle.Bold);
             this.guna2NumericUpDown4.ForeColor = System.Drawing.Color.White;
             this.guna2NumericUpDown4.Location = new System.Drawing.Point(251, 3);
+            this.guna2NumericUpDown4.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.guna2NumericUpDown4.Name = "guna2NumericUpDown4";
             this.guna2NumericUpDown4.Size = new System.Drawing.Size(169, 31);
             this.guna2NumericUpDown4.TabIndex = 14;
@@ -565,6 +595,11 @@
             this.guna2NumericUpDown3.Font = new System.Drawing.Font("Comfortaa", 9.999998F, System.Drawing.FontStyle.Bold);
             this.guna2NumericUpDown3.ForeColor = System.Drawing.Color.White;
             this.guna2NumericUpDown3.Location = new System.Drawing.Point(251, 3);
+            this.guna2NumericUpDown3.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.guna2NumericUpDown3.Name = "guna2NumericUpDown3";
             this.guna2NumericUpDown3.Size = new System.Drawing.Size(169, 31);
             this.guna2NumericUpDown3.TabIndex = 14;
@@ -618,6 +653,11 @@
             this.guna2NumericUpDown2.Font = new System.Drawing.Font("Comfortaa", 9.999998F, System.Drawing.FontStyle.Bold);
             this.guna2NumericUpDown2.ForeColor = System.Drawing.Color.White;
             this.guna2NumericUpDown2.Location = new System.Drawing.Point(251, 3);
+            this.guna2NumericUpDown2.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.guna2NumericUpDown2.Name = "guna2NumericUpDown2";
             this.guna2NumericUpDown2.Size = new System.Drawing.Size(169, 31);
             this.guna2NumericUpDown2.TabIndex = 14;
@@ -671,6 +711,11 @@
             this.guna2NumericUpDown1.Font = new System.Drawing.Font("Comfortaa", 9.999998F, System.Drawing.FontStyle.Bold);
             this.guna2NumericUpDown1.ForeColor = System.Drawing.Color.White;
             this.guna2NumericUpDown1.Location = new System.Drawing.Point(251, 3);
+            this.guna2NumericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
             this.guna2NumericUpDown1.Size = new System.Drawing.Size(169, 31);
             this.guna2NumericUpDown1.TabIndex = 14;

@@ -42,6 +42,8 @@ namespace CyberCoffe_User_Control
                 tbPricePerHour.Text = PricePerHour.ToString("F2");
             else
                 tbPricePerHour.Text = string.Empty;
+
+            btnForFree.PerformClick();
         }
 
         private void _SetEventsForTimeChange()

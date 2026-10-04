@@ -100,7 +100,13 @@ namespace CyberCoffe_User_Control.Settings
         private void FillDictionaryWithRatesFromNumericUpDownControl(Guna2NumericUpDown guna2NumericUp)
         {
             byte ComputerNum = Convert.ToByte(guna2NumericUp.Tag);
-            clsWorkstationPricing.PerDeviceRates.Add(ComputerNum, Convert.ToDecimal(guna2NumericUp.Value));
+            decimal value = Convert.ToDecimal(guna2NumericUp.Value);
+
+            if (clsWorkstationPricing.PerDeviceRates.ContainsKey(ComputerNum))
+                clsWorkstationPricing.PerDeviceRates[ComputerNum] = value;
+
+            else
+                clsWorkstationPricing.PerDeviceRates.Add(ComputerNum, value);
         }
 
         public bool Save()
