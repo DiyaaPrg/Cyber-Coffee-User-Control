@@ -23,6 +23,8 @@ namespace CyberCoffe_User_Control
 
         private byte _WorkstationNum { get; set; }
 
+        private decimal _PricePerHour { get; set; }
+
         public byte WorkstationNum
         {
             set 
@@ -84,14 +86,14 @@ namespace CyberCoffe_User_Control
         public void SetPricePerHour()
         {
             if (clsWorkstationPricing.pricingMode is clsWorkstationPricing.PricingMode.Unified)
-                _Workstation.PricePerHour = Convert.ToDecimal(clsWorkstationPricing.UnifiedRate);
+                _PricePerHour = Convert.ToDecimal(clsWorkstationPricing.UnifiedRate);
             else if (clsWorkstationPricing.pricingMode is clsWorkstationPricing.PricingMode.PerDevice)
             {
                 byte ctrlKey = Convert.ToByte(this.Tag);
-                _Workstation.PricePerHour = clsWorkstationPricing.PerDeviceRates[ctrlKey];
+                _PricePerHour = clsWorkstationPricing.PerDeviceRates[ctrlKey];
             }
             else
-                _Workstation.PricePerHour = -1; //not found
+                _PricePerHour = -1; //not found
 
         }
 
@@ -112,8 +114,11 @@ namespace CyberCoffe_User_Control
 
         private void _SetEventsToStart()
         {
-            if (_Workstation.SessionType != enSessionType.free) 
+            if (_Workstation.SessionType != enSessionType.free)
+            {
+                timer1.Tick -= countUp_timer;
                 timer1.Tick += countDown_timer;
+            }
 
         }
 
@@ -251,29 +256,36 @@ namespace CyberCoffe_User_Control
 
 
             // Reset: 
-            _Workstation = null;
-            _Workstation = new WorkstationEventArgs();
-            btnSettings.Enabled = true;
-            btnStop.Enabled = false;
-            picPC.Image = Resources.computer_free;
-            lblTime.Text = $"{_Workstation.Hours:D2}:{_Workstation.Minutes:D2}:{_Workstation.Seconds:D2}";
-
-            timer1.Tick -= countDown_timer;
-            timer1.Tick -= countUp_timer;
-
-
-            btnStart.Text = "Start";
-            btnStart.Tag = false; 
-
-            
+            _SetDefault();     
 
         }
 
         private void _SetDefault()
         {
-            _Workstation.SessionType = enSessionType.free;
-            if (_Workstation.SessionType == enSessionType.free)
-                timer1.Tick += countUp_timer;
+            timer1.Tick -= countDown_timer;
+            timer1.Tick -= countUp_timer;
+
+            _Workstation.SessionType = enSessionType.free; //default type
+            timer1.Tick += countUp_timer; // for free session
+
+            _Workstation = null;
+            _Workstation = new WorkstationEventArgs();
+            _Workstation.PricePerHour = _PricePerHour;
+
+            btnSettings.Enabled = true;
+            btnStop.Enabled = false;
+            picPC.Image = Resources.computer_free;
+
+            lblTime.Text = $"{_Workstation.Hours:D2}:{_Workstation.Minutes:D2}:{_Workstation.Seconds:D2}";
+
+            _Hours = 0;
+            _Minutes = 0;
+            _Seconds = 0;
+
+
+            btnStart.Text = "Start";
+            btnStart.Tag = false;
+
 
         }
 

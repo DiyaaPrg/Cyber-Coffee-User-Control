@@ -19,27 +19,33 @@ namespace CyberCoffe_User_Control
 
             if (clsWorkstationPricing.Find())
             {
-                ctrlWorkstation1.SetPricePerHour();
-                ctrlWorkstation2.SetPricePerHour();
-                ctrlWorkstation3.SetPricePerHour();
-                ctrlWorkstation4.SetPricePerHour();
-                ctrlWorkstation5.SetPricePerHour();
-                ctrlWorkstation6.SetPricePerHour();
-                ctrlWorkstation7.SetPricePerHour();
-                ctrlWorkstation8.SetPricePerHour();
+                foreach (Control control in this.Controls)
+                {
+                    if (control.GetType() == typeof(ctrlWorkstation))
+                    {
+                        ctrlWorkstation Workstation = (ctrlWorkstation)control;
+                        Workstation.SetPricePerHour();
+                    }
+                }
+
+                //ctrlWorkstation1.SetPricePerHour();
+                //ctrlWorkstation2.SetPricePerHour();
+                //ctrlWorkstation3.SetPricePerHour();
+                //ctrlWorkstation4.SetPricePerHour();
+                //ctrlWorkstation5.SetPricePerHour();
+                //ctrlWorkstation6.SetPricePerHour();
+                //ctrlWorkstation7.SetPricePerHour();
+                //ctrlWorkstation8.SetPricePerHour();
             }
         }
 
         private void _SetUserControlNum()
         {
-            //byte count = 1;
-
             foreach (Control control in this.Controls)
             {
                 if (control is ctrlWorkstation workstation)
                 {
-                    workstation.WorkstationNum =Convert.ToByte(control.Tag);
-                    //++count;
+                    workstation.WorkstationNum = Convert.ToByte(control.Tag);
                 }
             }
         }

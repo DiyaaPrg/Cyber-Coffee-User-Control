@@ -79,11 +79,14 @@ namespace CyberCoffe_User_Control.Settings
         {
             if (clsWorkstationPricing.pricingMode is clsWorkstationPricing.PricingMode.Unified)
             {
+
                 NupDoUnifiedRate.Value = clsWorkstationPricing.UnifiedRate ?? 0;
+                rbSamePrice.Checked = true;
             }
             else if (clsWorkstationPricing.pricingMode is clsWorkstationPricing.PricingMode.PerDevice)
             {
                 _FindNumericUpDownInsidePanelAndDoAction(PnlIndividualPrice, _FillNumericUpDownFromDictionary);
+                rbIndividualPrice.Checked = true;
             }
             else
                 return;
@@ -91,7 +94,7 @@ namespace CyberCoffe_User_Control.Settings
 
         private void UcPricing_Load(object sender, EventArgs e)
         {
-            rbSamePrice.Checked = true;
+            //rbSamePrice.Checked = true;
         }
 
         private void FillDictionaryWithRatesFromNumericUpDownControl(Guna2NumericUpDown guna2NumericUp)

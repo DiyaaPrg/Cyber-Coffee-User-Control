@@ -228,7 +228,6 @@
             this.tbSeconds.TabIndex = 18;
             this.tbSeconds.Tag = "59";
             this.tbSeconds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbSeconds.TextChanged += new System.EventHandler(this.tbSeconds_TextChanged);
             this.tbSeconds.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSeconds_KeyPress);
             // 
             // tbMinutes
@@ -256,7 +255,6 @@
             this.tbMinutes.TabIndex = 17;
             this.tbMinutes.Tag = "59";
             this.tbMinutes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbMinutes.TextChanged += new System.EventHandler(this.tbMinutes_TextChanged);
             this.tbMinutes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMinutes_KeyPress);
             // 
             // tbHour
@@ -284,7 +282,6 @@
             this.tbHour.TabIndex = 16;
             this.tbHour.Tag = "23";
             this.tbHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbHour.TextChanged += new System.EventHandler(this.tbHour_TextChanged);
             this.tbHour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHour_KeyPress);
             // 
             // label6
@@ -462,7 +459,6 @@
             this.tbPricePerHour.SelectedText = "";
             this.tbPricePerHour.Size = new System.Drawing.Size(361, 47);
             this.tbPricePerHour.TabIndex = 6;
-            this.tbPricePerHour.TextChanged += new System.EventHandler(this.tbPricePerHour_TextChanged);
             this.tbPricePerHour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPricePerHour_KeyPress);
             this.tbPricePerHour.Validating += new System.ComponentModel.CancelEventHandler(this.tbPricePerHour_Validating);
             // 

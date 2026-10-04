@@ -21,10 +21,10 @@ namespace CyberCoffe_User_Control
         public FrmConfig(decimal PricePerHour)
         {
             InitializeComponent();
-            this.PricePerhour = PricePerHour;
+            this.PricePerHour = PricePerHour;
         }
 
-        private decimal PricePerhour=0;
+        private decimal PricePerHour = 0;
 
         ctrlWorkstation.WorkstationEventArgs workstationSettings = new ctrlWorkstation.WorkstationEventArgs();
 
@@ -36,15 +36,19 @@ namespace CyberCoffe_User_Control
 
             this.MaximizeBox = false;
 
+            _SetEventsForTimeChange();
 
+            if (PricePerHour != -1) // -1 means not found, so set it empty!
+                tbPricePerHour.Text = PricePerHour.ToString("F2");
+            else
+                tbPricePerHour.Text = string.Empty;
+        }
+
+        private void _SetEventsForTimeChange()
+        {
             tbHour.TextChanged += ValidateTimeForPriceCalculation;
             tbMinutes.TextChanged += ValidateTimeForPriceCalculation;
             tbSeconds.TextChanged += ValidateTimeForPriceCalculation;
-
-            if (PricePerhour != -1) // -1 means not found, so set it empty!
-                tbPricePerHour.Text = PricePerhour.ToString("F2");
-            else
-                tbPricePerHour.Text = string.Empty;
         }
 
         private void tbPricePerHour_KeyPress(object sender, KeyPressEventArgs e)
@@ -79,22 +83,22 @@ namespace CyberCoffe_User_Control
             tbHour.Text = (clsValidate.IsEmpty(tbHour)) ? "0" : tbHour.Text;
             tbMinutes.Text = (clsValidate.IsEmpty(tbMinutes)) ? "0" : tbMinutes.Text;
             tbSeconds.Text = (clsValidate.IsEmpty(tbSeconds)) ? "0" : tbSeconds.Text;
+            tbPrice.Text = (clsValidate.IsEmpty(tbPrice)) ? "0" : tbPrice.Text;
 
 
-
-            if (string.IsNullOrEmpty(tbPricePerHour.Text))
+            if (clsValidate.IsEmpty(tbPricePerHour))
                 return false;
             if (workstationSettings.SessionType is ctrlWorkstation.enSessionType.byPrice && clsValidate.IsEmpty(tbPrice))
                 return false;
 
-            //if (workstationSettings.SessionType is ctrlWorkstation.enSessionType.byTime)
-            //{
-            //    if ((clsValidate.IsEmpty(tbHour)) || (clsValidate.IsEmpty(tbMinutes)) || (clsValidate.IsEmpty(tbSeconds)))
-            //    {
-            //        return false;
-            //    }
-            //}
-                
+            if (workstationSettings.SessionType is ctrlWorkstation.enSessionType.byTime)
+            {
+                if ((tbHour.Text == "00") && (tbMinutes.Text=="00") && (tbSeconds.Text=="00"))
+                {
+                    return false;
+                }
+            }
+
             return true;
         }
 
@@ -109,7 +113,7 @@ namespace CyberCoffe_User_Control
                 return;
             }
 
-            workstationSettings.PricePerHour = (clsValidate.IsEmpty(tbPricePerHour)) ? 0: Convert.ToDecimal(tbPricePerHour.Text);
+            //workstationSettings.PricePerHour = (clsValidate.IsEmpty(tbPricePerHour)) ? 0: Convert.ToDecimal(tbPricePerHour.Text);
 
             if (workstationSettings.SessionType == ctrlWorkstation.enSessionType.free)
                 OnSettingsSaved?.Invoke(this, workstationSettings);
@@ -190,7 +194,7 @@ namespace CyberCoffe_User_Control
         private void tbPrice_TextChanged(object sender, EventArgs e)
         {
             if (workstationSettings.SessionType != ctrlWorkstation.enSessionType.byPrice)
-                return;
+                return; // because when user set time, the price changes based on time input, so when price changed because of time do not execute this method!
 
 
             if (clsValidate.IsEmpty(tbPrice))
@@ -202,7 +206,7 @@ namespace CyberCoffe_User_Control
 
             // if price for paying can achive above 23 hours, 
 
-            decimal PriceToPay = (clsValidate.IsEmpty(tbPrice))? 0: Convert.ToDecimal(tbPrice.Text);
+            decimal PriceToPay = (clsValidate.IsEmpty(tbPrice)) ? 0: Convert.ToDecimal(tbPrice.Text);
             decimal PricePerHour = (clsValidate.IsEmpty(tbPricePerHour)) ? 0 : Convert.ToDecimal(tbPricePerHour.Text);
 
             if (PriceToPay / PricePerHour > 23) // result is more than 23 hours for session
@@ -210,7 +214,7 @@ namespace CyberCoffe_User_Control
                 MessageBox.Show("Price entered is large! Enter a valid price", "Pay", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tbPrice.Text = "";
                 return;
-            }    
+            }    // this is temp
 
 
             int hours = 0, seconds = 0, minutes = 0;
@@ -220,28 +224,6 @@ namespace CyberCoffe_User_Control
             tbHour.Text = hours.ToString();
             tbMinutes.Text = minutes.ToString();
             tbSeconds.Text = seconds.ToString();
-        }
-
-        private void tbHour_TextChanged(object sender, EventArgs e)
-        {
-            //if (workstationSettings.Method != ctrlWorkstation.enBookingMethod.byTime)
-            //    return;
-
-            //if ((!string.IsNullOrEmpty(tbHour.Text))  )
-            //    tbPrice.Text =
-            //        $"{(clsCalculation.CalculatePriceByTime(Convert.ToDecimal(tbPricePerHour.Text), Convert.ToByte(tbHour.Text), Convert.ToByte(tbMinutes.Text), Convert.ToByte(tbSeconds.Text)))}";
-        }
-
-        private void tbMinutes_TextChanged(object sender, EventArgs e)
-        {
-            //    if ((!string.IsNullOrEmpty(tbMinutes.Text)) )
-            //        tbPrice.Text = $"{(clsCalculation.CalculatePriceByTime(Convert.ToDecimal(tbPricePerHour.Text), Convert.ToByte(tbHour.Text), Convert.ToByte(tbMinutes.Text), Convert.ToByte(tbSeconds.Text)))}";
-        }
-
-        private void tbSeconds_TextChanged(object sender, EventArgs e)
-        {
-            //if ((!string.IsNullOrEmpty(tbSeconds.Text)) )
-                //tbPrice.Text = $"{(clsCalculation.CalculatePriceByTime(Convert.ToDecimal(tbPricePerHour.Text), Convert.ToByte(tbHour.Text), Convert.ToByte(tbMinutes.Text), Convert.ToByte(tbSeconds.Text)))}";
         }
 
         private void MethodButton_Click(object sender, EventArgs e)
@@ -324,17 +306,6 @@ namespace CyberCoffe_User_Control
 
         }
 
-        private void tbPricePerHour_TextChanged(object sender, EventArgs e)
-        {
-            //if (workstationSettings.Method == ctrlWorkstation.enBookingMethod.byPrice)
-            //{
-            //    //tbPrice_TextChanged(sender, e);
-            //}
-            //else if (workstationSettings.Method == ctrlWorkstation.enBookingMethod.byTime)
-            //{
-            //    //ValidateTime(sender, e);
-            //}
-        }
 
     }
 }

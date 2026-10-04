@@ -33,9 +33,6 @@ namespace CyberCoffee_Business
 
             _AddPricingModeToRegistry();
 
-            // check UnifiedRate folder exist first (if not create folder in registry):
-            //if exists: delete its value 
-
             // add new value
             return clsWorkstationPricingData.AddUnifiedRateToRegistry(_UnifiedRateKeyPath, _UnifiedRateValueName, UnifiedRate);
 
@@ -48,8 +45,6 @@ namespace CyberCoffee_Business
             _AddPricingModeToRegistry();
 
 
-            // check UnifiedRate folder exist first (if not create folder in registry):
-            //if exists: delete its value 
             return clsWorkstationPricingData.AddDevicesRateToRegistry(_DevicesRatesKeyPath, PerDeviceRates);
 
 
