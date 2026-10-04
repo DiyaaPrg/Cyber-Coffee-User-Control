@@ -20,7 +20,7 @@ namespace CyberCoffee_DataAccess
             }
             catch (Exception ex)
             {
-                return null;
+                clsErrorHandlingcs.WriteInLogEvent(ex.Message);
             }
 
             return (PricingMode)Mode;
@@ -35,7 +35,7 @@ namespace CyberCoffee_DataAccess
             }
             catch(Exception ex)
             {
-                value = null;
+                clsErrorHandlingcs.WriteInLogEvent(ex.Message);
             }
             return value;
         }
@@ -62,7 +62,7 @@ namespace CyberCoffee_DataAccess
                 }
                 catch (Exception ex)
                 {
-                    //Console.WriteLine($"An error occurred: {ex.Message}");
+                    clsErrorHandlingcs.WriteInLogEvent(ex.Message);
                 }
                 ++count;
             }
@@ -78,6 +78,7 @@ namespace CyberCoffee_DataAccess
             }
             catch(Exception ex)
             {
+                clsErrorHandlingcs.WriteInLogEvent(ex.Message);
                 return false;
             }
             return true;
@@ -94,6 +95,7 @@ namespace CyberCoffee_DataAccess
                 }
                 catch(Exception ex)
                 {
+                    clsErrorHandlingcs.WriteInLogEvent(ex.Message);
                     return false;
                 }
             }
@@ -108,6 +110,7 @@ namespace CyberCoffee_DataAccess
             }
             catch(Exception ex)
             {
+                clsErrorHandlingcs.WriteInLogEvent(ex.Message);
                 return false;
             }
             return true;
