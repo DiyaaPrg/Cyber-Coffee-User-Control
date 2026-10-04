@@ -52,12 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsCalculation.cs" />
-    <Compile Include="clsValidate.cs" />
-    <Compile Include="ctrlWorkstation.cs">
+    <Compile Include="Global\clsCalculation.cs" />
+    <Compile Include="Global\clsValidate.cs" />
+    <Compile Include="Workstation\ctrlWorkstation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlWorkstation.Designer.cs">
+    <Compile Include="Workstation\ctrlWorkstation.Designer.cs">
       <DependentUpon>ctrlWorkstation.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -66,22 +66,22 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConfig.cs">
+    <Compile Include="Settings\FrmConfig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmConfig.Designer.cs">
+    <Compile Include="Settings\FrmConfig.Designer.cs">
       <DependentUpon>FrmConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInvoice.cs">
+    <Compile Include="Invoice\FrmInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInvoice.Designer.cs">
+    <Compile Include="Invoice\FrmInvoice.Designer.cs">
       <DependentUpon>FrmInvoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSettings.cs">
+    <Compile Include="Settings\FrmSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSettings.Designer.cs">
+    <Compile Include="Settings\FrmSettings.Designer.cs">
       <DependentUpon>FrmSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -92,19 +92,19 @@
     <Compile Include="Settings\UcPricing.Designer.cs">
       <DependentUpon>UcPricing.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ctrlWorkstation.resx">
+    <EmbeddedResource Include="Workstation\ctrlWorkstation.resx">
       <DependentUpon>ctrlWorkstation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConfig.resx">
+    <EmbeddedResource Include="Settings\FrmConfig.resx">
       <DependentUpon>FrmConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInvoice.resx">
+    <EmbeddedResource Include="Invoice\FrmInvoice.resx">
       <DependentUpon>FrmInvoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSettings.resx">
+    <EmbeddedResource Include="Settings\FrmSettings.resx">
       <DependentUpon>FrmSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
